@@ -1,0 +1,30 @@
+#Author: Nicholas Dash, Date Sept. 1 2021, Purpose Calculate ANOVA on simple data
+library(dplyr)
+
+PATH <- "https://raw.githubusercontent.com/guru99-edu/R-Programming/master/poisons.csv" 
+
+df <- read.csv(PATH) %>% select(-X) %>% mutate(poison = factor(poison, ordered = TRUE))
+
+glimpse(df)
+
+Rows: 48
+Columns: 3
+$ time   <dbl> 0.31, 0.45, 0.46, 0.43, 0.36, 0.29, 0.40, 0.23, 0.22, 0.21, 0.1~
+$ poison <ord> 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 1, 1, 1, 1, 2, 2, 2, 2, 3, ~
+$ treat  <chr> "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "B"~
+
+ levels(df$poison)
+
+[1] "1" "2" "3"
+
+levels(df$treat)
+NULL
+
+df %>% group_by(poison) %>% summarise( count_poison = n(), mean_time = mean(time, na.rm = TRUE), sd_time = sd(time, na.rm = TRUE) )
+
+ A tibble: 3 x 4
+  poison count_poison mean_time sd_time
+  <ord>         <int>     <dbl>   <dbl>
+1 1                16     0.618  0.209 
+2 2                16     0.544  0.289 
+3 3                16     0.276  0.0623
