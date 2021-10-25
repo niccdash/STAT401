@@ -1,4 +1,4 @@
-# Author: Pawar, Date: Oct 20, 2021, purpose: Perform multiple linear regression on sample dataset
+# Author: Nicholas Dash, Date: Oct 20, 2021, purpose: Perform multiple linear regression on sample dataset
 
 # Load library Tidyverse
 library(tidyverse)
