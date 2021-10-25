@@ -1,4 +1,4 @@
-# Author: Pawar, Date: Oct 18 2021, Purpose is simple linear regression analysis
+# Author: Nicholas Dash, Date: Oct 18 2021, Purpose is simple linear regression analysis
 
 # Import our dependent and independent variables
 x <- c(151, 174, 138, 186, 128, 136, 179, 163, 152, 131) 
